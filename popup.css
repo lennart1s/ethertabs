@@ -1,0 +1,49 @@
+html, body {
+    width: 340px;
+    margin: 0;
+    padding: 5px;
+    padding-right: 20px;
+}
+
+#title {
+    border-bottom: 0.5px solid #ccc;
+    
+    font-size: 12px;
+    font-family: 'Open Sans', monospace;
+    margin-bottom: 3px;
+}
+
+#title > i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+#title > h2 {
+    font-size: 10px;
+    color: #aaa;
+    float: right;
+}
+
+#title > * {
+    display: inline;
+    margin: 0;
+}
+
+#navbar {
+    font-size: 30px;
+}
+
+#navbar > i:hover {
+    transition-duration: 0.3s;
+    transform: scale(1.15);
+    opacity: 0.7;
+}
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
