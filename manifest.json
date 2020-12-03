@@ -2,10 +2,14 @@
     "manifest_version": 2,
     "name": "Ether Tabs",
     "description": "Quickly save your tabs to the Ether",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "browser_action": {
         "default_popup": "popup.html"
     },
-    "permissions": ["storage", "activeTab", "tabs"]
-
+    "permissions": ["storage", "activeTab", "tabs"],
+    "icons": {
+        "16": "/res/EtherLogo16.png",
+        "48": "/res/EtherLogo48.png",
+        "128": "/res/EtherLogo128.png"
+    }
 }

@@ -1,21 +1,43 @@
 html, body {
-    width: 340px;
+    width: 285px;
+    min-height: 65px;
     margin: 0;
-    padding: 5px;
-    padding-right: 20px;
+    padding: 4px 7px 4px 6px;
+}
+
+header {
+    display: grid;
+    grid-template-rows: 30px auto;
+    grid-template-columns: auto 40px 35px;
 }
 
 #title {
-    border-bottom: 0.5px solid #ccc;
+    grid-row: 1/2;
+    grid-column: 1/2;
+    
+    margin-top: 4px;
+    padding-bottom: 5px;
     
     font-size: 12px;
     font-family: 'Open Sans', monospace;
     margin-bottom: 3px;
+    padding-bottom: 5px;    
 }
 
-#title > i {
-    font-size: 25px;
-    margin-right: 10px;
+#title > * {
+    display: inline;
+    margin: 0;
+}
+
+#title > img {
+    width: 23px; 
+    height: 23px;
+    vertical-align: bottom;
+}
+
+#title > h1 {
+    color: rgb(49, 31, 40);
+    font-size: 20px;
 }
 
 #title > h2 {
@@ -24,19 +46,109 @@ html, body {
     float: right;
 }
 
-#title > * {
-    display: inline;
-    margin: 0;
+header > i {
+    color: #555;
 }
 
-#navbar {
+#save_btn {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
     font-size: 30px;
 }
 
-#navbar > i:hover {
+#load_btn {
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+
+    font-size: 30px;
+}
+
+header > i:hover {
     transition-duration: 0.3s;
     transform: scale(1.15);
     opacity: 0.7;
+
+    cursor: hand;
+}
+
+#hs {
+    height: 0px;
+    margin-top: 4px;
+    border-top: 0.5px solid #ccc;
+}
+
+body > p {
+    margin-top: 12px;
+    margin-bottom: 7px;
+
+    color: #333;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#tab-list {
+    width: 95%;
+    padding-left: 5px;
+    padding-bottom: 1px;
+    margin-bottom: 2px;
+    border-left: 1px solid #aaa;
+}
+
+#tab-list > div {
+
+    padding: 0px 3px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: space-between;
+
+    pointer-events: none;
+
+    border-radius: 3px;
+}
+
+#tab-list > div:hover {
+    background-color: #eee;
+}
+
+#tab-list > div > p {
+    max-width: 85%;
+
+    margin: 5px 0px;
+    font-weight: 200;
+    color: #222;
+
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: unset;
+
+    pointer-events: auto;
+}
+
+#tab-list >div > p:hover {
+    cursor: hand;
+}
+
+#tab-list > div > button {
+    width: 15px;
+    height: 15px;
+
+    margin: auto 0px;
+    padding: 0px;
+    line-height: 2px;
+
+    border: 1px solid #777;
+    border-radius: 4px;
+
+    pointer-events: auto;
+}
+
+#tab-list >div > button:hover {
+    cursor: hand;
 }
 
 .unselectable {
