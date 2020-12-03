@@ -3,7 +3,7 @@ var currentlySyncedTabs
 
 window.onload = function() {
     document.getElementById("save_btn").onclick = function() {
-        getTabs(function(tabs) {
+        getTabs(function(tabs) {            
             saveTabsToSync(tabs)
             setTabList(tabs)
             console.log(currentlySyncedTabs)

@@ -72,6 +72,14 @@ header > i:hover {
     cursor: hand;
 }
 
+header > i:active {
+    transition-duration: 0.1s;
+    color: rgb(66, 10, 53);
+    opacity: 1;
+
+    cursor: hand;
+}
+
 #hs {
     height: 0px;
     margin-top: 4px;
