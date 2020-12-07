@@ -1,14 +1,56 @@
 var tabList
 var currentlySyncedTabs
 
+var toID
+var toID2
+var reloaded = false
+
 window.onload = function() {
-    document.getElementById("save_btn").onclick = function() {
+    /*document.getElementById("save_btn").onclick = function() {
+        console.log("clicked")
+        
         getTabs(function(tabs) {            
             saveTabsToSync(tabs)
             setTabList(tabs)
-            console.log(currentlySyncedTabs)
         })
-    }
+    }*/
+    document.getElementById("save_btn").addEventListener('mousedown', function(event) {
+        console.log("mouseodnw")
+        toID2 = setTimeout(function() {
+            document.getElementById("save_btn").classList.add("loading")
+        }, 500)
+        
+        toID = setTimeout(function() {
+            reloaded = true;
+            console.log("timeout")
+            document.getElementById("save_btn").classList.remove("loading")
+            loadPrevTabsFromSync(function(tabs) {
+                saveTabsToSync(tabs)
+                setTabList(tabs)
+            })
+        }, 1500)
+
+    })
+    document.getElementById("save_btn").addEventListener('mouseup', function() {
+        console.log("stop")
+        clearTimeout(toID)
+        clearTimeout(toID2)
+        document.getElementById("save_btn").classList.remove("loading")
+        if (!reloaded) {
+        getTabs(function(tabs) {            
+            saveTabsToSync(tabs)
+            setTabList(tabs)
+        })}
+        reloaded = false
+    })
+    document.getElementById("save_btn").addEventListener('mouseleave', function() {
+        console.log("stop")
+        clearTimeout(toID)
+        clearTimeout(toID2)
+        document.getElementById("save_btn").classList.remove("loading")
+    })
+    
+
     document.getElementById("load_btn").onclick = function() {
         loadTabsFromSync(openTabs)
     }
@@ -41,6 +83,12 @@ function loadTabsFromSync(callback) {
     })
 }
 
+function loadPrevTabsFromSync(callback) {
+    chrome.storage.sync.get("ethertabs_previous", function(tabs) {
+        callback(tabs["ethertabs_previous"])
+    })
+}
+
 function openTabs(tabs) {
     tabs.forEach(function(tab) {
         chrome.tabs.create({url: tab.url})
@@ -48,6 +96,8 @@ function openTabs(tabs) {
 }
 
 function saveTabsToSync(tabs) {
+    chrome.storage.sync.set({"ethertabs_previous": currentlySyncedTabs}, null)
+
     currentlySyncedTabs = tabs
     chrome.storage.sync.set({"ethertabs": tabs}, null)
 }
