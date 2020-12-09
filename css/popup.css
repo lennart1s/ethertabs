@@ -1,0 +1,130 @@
+html, body {
+  width: 285px;
+  min-height: 65px;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 7px 7px;
+  padding-bottom: 6px;
+  border-bottom: #ddd 1px solid;
+}
+
+header > img {
+  margin-top: 3px;
+  width: 23px;
+  height: 23px;
+}
+
+header > h1 {
+  margin: 3px 5px;
+  margin-right: auto;
+  color: #312;
+  font-size: 20px;
+  font-family: 'Open Sans', monospace;
+}
+
+#save_btn, #load_btn {
+  margin-left: 8px;
+  color: #555;
+  font-size: 30px;
+}
+
+#save_btn:hover, #load_btn:hover {
+  transition-duration: 0.3s;
+  transform: scale(1.15);
+  opacity: 0.7;
+  cursor: hand;
+}
+
+#save_btn:active, #load_btn:active {
+  transition-duration: 0.1s;
+  color: #420a35;
+  opacity: 1;
+}
+
+.loading {
+  color: transparent;
+  background-position-y: -100%;
+  background-image: linear-gradient(#c57906 50%, #420a35 50%);
+  background-size: auto 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-duration: 1s;
+  animation-name: loadup;
+}
+
+@keyframes loadup {
+  100% {
+    background-position-y: -0%;
+  }
+}
+
+#tab_list {
+  margin: 5px 10px;
+  padding: 0px 0px 1px 6px;
+  border-left: 1px solid #aaa;
+}
+
+#tab_list > div {
+  padding: 0px 3px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  pointer-events: none;
+}
+
+#tab_list > div > p {
+  max-width: 85%;
+  margin: 3px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: all;
+}
+
+#tab_list > div > p:hover {
+  cursor: hand;
+}
+
+#tab_list > div > button {
+  width: 15px;
+  height: 15px;
+  margin: auto 0px auto auto;
+  padding-left: 2px;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: left;
+  color: #777;
+  border: 1px solid #aaa;
+  pointer-events: auto;
+}
+
+#tab_list > div > button:hover {
+  background-color: #ccc;
+}
+
+#tab_list > div:hover {
+  background-color: #eee;
+}
+
+body > p {
+  margin: 12px 0px 7px 12px;
+  color: #312;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

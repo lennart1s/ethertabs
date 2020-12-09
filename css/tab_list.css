@@ -1,0 +1,48 @@
+#tab_list {
+  margin: 5px 10px;
+  padding: 0px 0px 1px 6px;
+  border-left: 1px solid #aaa;
+}
+
+#tab_list > div {
+  padding: 0px 3px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  pointer-events: none;
+}
+
+#tab_list > div > p {
+  max-width: 85%;
+  margin: 3px 0px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: all;
+}
+
+#tab_list > div > p:hover {
+  cursor: hand;
+}
+
+#tab_list > div > button {
+  width: 15px;
+  height: 15px;
+  margin: auto 0px auto auto;
+  padding-left: 2px;
+  font-size: 12px;
+  line-height: 13px;
+  text-align: left;
+  color: #777;
+  border: 1px solid #aaa;
+  pointer-events: auto;
+}
+
+#tab_list > div > button:hover {
+  background-color: #ccc;
+}
+
+#tab_list > div:hover {
+  background-color: #eee;
+}

@@ -1,0 +1,36 @@
+#save_btn, #load_btn {
+  margin-left: 8px;
+  color: #555;
+  font-size: 30px;
+}
+
+#save_btn:hover, #load_btn:hover {
+  transition-duration: 0.3s;
+  transform: scale(1.15);
+  opacity: 0.7;
+  cursor: hand;
+}
+
+#save_btn:active, #load_btn:active {
+  transition-duration: 0.1s;
+  color: #420a35;
+  opacity: 1;
+}
+
+.loading {
+  color: transparent;
+  background-position-y: -100%;
+  background-image: linear-gradient(#c57906 50%, #420a35 50%);
+  background-size: auto 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation-duration: 1s;
+  animation-name: loadup;
+}
+
+@keyframes loadup {
+  100% {
+    background-position-y: -0%;
+  }
+}
