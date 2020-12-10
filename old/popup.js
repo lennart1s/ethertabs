@@ -1,4 +1,4 @@
-var tabList
+var tab_list
 var currentlySyncedTabs
 
 var toID
@@ -55,7 +55,7 @@ window.onload = function() {
         loadTabsFromSync(openTabs)
     }
 
-    tabList = document.getElementById("tab-list")
+    tab_list = document.getElementById("tab-list")
     
     loadTabsFromSync(function(tabs) {
         currentlySyncedTabs = tabs
@@ -65,15 +65,15 @@ window.onload = function() {
 }
 
 function setTabList(tabs) {
-    tabList.innerHTML = ""
+    tab_list.innerHTML = ""
     
     tabs.forEach(function(tab) {
         div = createLinkDiv(tab.url)
-        tabList.appendChild(div)
+        tab_list.appendChild(div)
     })
 
     if (tabs.length == 0) {
-        tabList.innerHTML = "-"
+        tab_list.innerHTML = "-"
     }
 }
 
