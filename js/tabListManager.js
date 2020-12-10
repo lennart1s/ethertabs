@@ -20,7 +20,7 @@ function createTabDiv(url) {
     p.onclick = function() {window.open(url)}
     p.target = "_blank"
     parts = url.split("://", 2)[1].split("/")
-    p.innerHTML = parts[0]
+    p.innerHTML = '<font>' + parts[0] + '</font>/'
     p.innerHTML += parts.slice(1).join("/")
 
     div.appendChild(p)

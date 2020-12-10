@@ -24,7 +24,7 @@ header > h1 {
   margin-right: auto;
   color: #312;
   font-size: 20px;
-  font-family: 'Open Sans', monospace;
+  font-family: "Open Sans", monospace;
 }
 
 #save_btn, #load_btn {
@@ -60,10 +60,9 @@ header > h1 {
 
 @keyframes loadup {
   100% {
-    background-position-y: -0%;
+    background-position-y: 0%;
   }
 }
-
 #tab_list {
   margin: 5px 10px;
   padding: 0px 0px 1px 6px;
@@ -90,6 +89,10 @@ header > h1 {
 
 #tab_list > div > p:hover {
   cursor: hand;
+}
+
+#tab_list > div > p > font {
+  font-weight: 500;
 }
 
 #tab_list > div > button {
@@ -128,3 +131,5 @@ body > p {
   -ms-user-select: none;
   user-select: none;
 }
+
+/*# sourceMappingURL=popup.css.map */
